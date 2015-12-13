@@ -73,8 +73,28 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  width: 200px;
 }
 
 .price {
   padding-left: 2rem;
+}
+
+.delete {
+  display: none;
+  background: red;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #FFF;
+  padding: 5px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.delete:hover {
+  /*background: tomato;*/
+}
+
+.selected .delete {
+  display: inline-block;
 }

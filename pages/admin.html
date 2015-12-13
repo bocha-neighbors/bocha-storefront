@@ -15,5 +15,17 @@
     <main>
       <div class="catalog"></div>
     </main>
+    <form class="add-item" action="http://localhost:8080/catalog/new" method="post">
+      <label for="name">Item name</label>
+      <input type="text" name="name" id="name" value="">
+
+      <label for="price">Price</label>
+      <input type="text" name="price" id="price" value="">
+
+      <label for="description">Description</label>
+      <input type="text" name="description" id="description" value="">
+
+      <button type="submit" name="button">Add item</button>
+    </form>
   </body>
 </html>

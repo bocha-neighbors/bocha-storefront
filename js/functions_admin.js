@@ -3,8 +3,8 @@ function listCatalog(data) {
     var item =
     '<div class="item"' +
     'data-id="' + data[i].id + '">' +
-    data[i].name +
     '<span class="delete">Delete</span>' +
+    data[i].name +
     '</div>'
 
     $('.catalog').append(item)
