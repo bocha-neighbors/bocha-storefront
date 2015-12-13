@@ -9,8 +9,11 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 600px;
+}
+
+.home main {
+  align-items: center;
   margin-top: 80px;
 }
 
@@ -30,7 +33,16 @@ main {
   background: #1DAB89;
 }
 
-.home h1 {
+h1 {
   font-size: 3rem;
   font-weight: 300;
+}
+
+.item {
+    padding: 10px;
+}
+
+.selected {
+  background: #199175;
+  color: #FFF;
 }
