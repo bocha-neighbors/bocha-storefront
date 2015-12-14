@@ -4,10 +4,10 @@ function listCatalog(data) {
   for (var i=0; i < data.length; i++) {
     var item =
     '<div class="item"' +
-    'data-id="' + data[i].id + '">' +
-    data[i].name +
+    'data-id="' + data[i]['Item ID'] + '">' +
+    data[i]['Item Description'] +
     '<span class="price">' +
-    data[i].price +
+    data[i]['Price'] +
     '</span>' +
     '</div>'
 
