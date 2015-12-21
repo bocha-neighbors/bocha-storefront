@@ -1,6 +1,7 @@
 // Functions related to the order page
 
 function listCatalog(data) {
+  console.log(data[0])
   for (var i=0; i < data.length; i++) {
     var item =
     '<div class="item"' +
