@@ -1,5 +1,5 @@
 $(function(){
-  var url = 'http://localhost:8080/catalog'
+  var url = 'https://bocha-food-server.herokuapp.com/catalog'
   var cart = []
 
   $.get(url)
