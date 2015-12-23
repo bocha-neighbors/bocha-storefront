@@ -1,4 +1,5 @@
 // Functions related to the order page
+var ordersURL = 'http://localhost:5000/orders'
 
 function listCatalog(data) {
   console.log(data[0])
@@ -42,8 +43,44 @@ function addToCart(item, cart) {
   cart.push(item)
   console.log('Here\'s the cart', cart)
   console.log('Subtotal: ', findSubTotal(cart))
+
   // Refresh display of cart
   displayCart(cart)
+}
+
+function handleSubmitOrder(cart) {
+  $('.submit-order').click(function(event) {
+    console.log('Submit button clicked')
+    event.preventDefault()
+    postOrderToServer(cart)
+  })
+}
+
+function postOrderToServer(cart) {
+  var orderToPost = prepareToPost(cart)
+  console.log('This is the cart, which is being posted to the server:', orderToPost)
+  $.post(ordersURL, orderToPost)
+    .done(function(data) {
+      console.log( "Response from server: ", data )
+    })
+}
+
+function prepareToPost(cart) {
+  var order = {}
+  order.cart = cart
+  order.subtotal = findSubTotal(cart)
+  order.contactInfo = getContactInfo()
+  // order.taxTotal = findTaxTotal(cart, 0.083)
+  // order.grandTotal = findGrandTotal(cart)
+  return JSON.stringify(order)
+}
+
+function getContactInfo() {
+  var info = {}
+  info.name = $('#name').val()
+  info.email = $('#email').val()
+  info.phoneNumber = $('#phone-number').val()
+  return info
 }
 
 function displayCart(cart) {

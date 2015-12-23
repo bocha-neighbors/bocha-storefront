@@ -8,5 +8,7 @@ $(function(){
     highlightFirstItem()
     highlightSelectedItem()
     handleAddItem(data, cart)
+    handleSubmitOrder(cart)
+
   })
 })
