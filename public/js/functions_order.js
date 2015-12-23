@@ -40,7 +40,8 @@ function handleAddItem(data, cart) {
 function addToCart(item, cart) {
   // Add to cart array
   cart.push(item)
-  console.log('added item to cart. heres the cart', cart)
+  console.log('Here\'s the cart', cart)
+  console.log('Subtotal: ', findSubTotal(cart))
   // Refresh display of cart
   displayCart(cart)
 }
@@ -51,14 +52,29 @@ function displayCart(cart) {
 
   // Loop over the cart, adding each item to the cart div
   for (var i=0; i < cart.length; i++) {
+    // Build the item html
     var item =
-    '<div class="item">' +
-    cart[i]['Item Description'] +
-    '<span class="price">' +
-    cart[i]['Price'] +
-    '</span>' +
-    '</div>'
-
+      '<div class="item">' +
+      cart[i]['Item Description'] +
+      '<span class="price">' +
+      cart[i]['Price'] +
+      '</span>' +
+      '</div>'
+    // Put the item on the page
     $('.cart').append(item)
   }
+  // Put the subtotal on the page
+  var subtotal = findSubTotal(cart)
+  var subtotalHTML = subtotal.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+
+  $('.subtotal').text(subtotalHTML)
+}
+
+function findSubTotal(cart) {
+  var subtotal = 0
+  for (var i=0; i < cart.length; i++) {
+    var itemPrice = parseFloat(cart[i]['Price'])
+    subtotal += itemPrice
+  }
+  return subtotal
 }

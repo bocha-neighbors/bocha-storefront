@@ -50,10 +50,6 @@ h1 {
   font-size: 3rem;
 }
 
-.item {
-    padding: 10px;
-}
-
 .selected {
   background: #199175;
   color: #FFF;
@@ -81,11 +77,22 @@ h1 {
   overflow-x: hidden;
 }
 
+.subtotal {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.subtotal,
+.item {
+  padding: 10px;
+  width: 90%;
+}
+
 .item {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 90%;
 }
 
 .price {
@@ -109,4 +116,16 @@ h1 {
 
 .selected .delete {
   display: inline-block;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  height: 378px;
+}
+.subtotal {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
 }
