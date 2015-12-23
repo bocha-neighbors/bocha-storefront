@@ -2,10 +2,10 @@
 
 function listCatalog(data) {
   console.log(data[0])
-  for (var i=0; i < data.length; i++) {
+  for (var i=1; i < data.length; i++) {
     var item =
     '<div class="item"' +
-    'data-id="' + data[i]['Item ID'] + '">' +
+    'data-id="' + i + '">' +
     data[i]['Item Description'] +
     '<span class="price">' +
     data[i]['Price'] +
@@ -30,7 +30,7 @@ function highlightSelectedItem() {
 function handleAddItem(data, cart) {
   $('.add').click(function(event) {
     event.preventDefault()
-    var selectedIndex = $('.selected').attr('data-id') - 1
+    var selectedIndex = $('.selected').attr('data-id')
     var item = data[selectedIndex]
     console.log('you clicked. heres one item', item)
     addToCart(item, cart)
@@ -52,11 +52,10 @@ function displayCart(cart) {
   // Loop over the cart, adding each item to the cart div
   for (var i=0; i < cart.length; i++) {
     var item =
-    '<div class="item"' +
-    'data-id="' + cart[i].id + '">' +
-    cart[i].name +
+    '<div class="item">' +
+    cart[i]['Item Description'] +
     '<span class="price">' +
-    cart[i].price +
+    cart[i]['Price'] +
     '</span>' +
     '</div>'
 
