@@ -33,6 +33,7 @@ main {
   border-radius: 1rem;
   color: #FFF;
   transition: background 0.1s ease;
+
 }
 
 .button:hover {
@@ -40,8 +41,13 @@ main {
 }
 
 h1 {
-  font-size: 3rem;
+  margin: 10px 17px;
+  color: #333;
   font-weight: 300;
+}
+
+.title {
+  font-size: 3rem;
 }
 
 .item {
@@ -69,11 +75,17 @@ h1 {
   flex-grow: 1;
 }
 
+.catalog {
+  overflow-y: scroll;
+  height: 400px;
+  overflow-x: hidden;
+}
+
 .item {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 100%;
+  width: 90%;
 }
 
 .price {
